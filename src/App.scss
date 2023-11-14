@@ -60,6 +60,7 @@ body {
                 &.equals {
                     background: #4bd086;
                     grid-column: 3/5;
+                    inline-size: auto;
                 }
                 &.opt {
                     background: rgba(247,149,5, 0.8);
