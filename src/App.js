@@ -1,64 +1,43 @@
-import { type } from '@testing-library/user-event/dist/type';
 import './App.css';
-import { useState } from 'react';
+import Container from './components/Container';
+import Screen from './components/Screen';
+import BtnBox from './components/BtnBox';
+import Button from './components/Button';
 
 function App() {
 
-  const [calcState, setCalc] = useState([]);
-  const [display, setDisplay] = useState('');
-  const [result, setResult] = useState(0);
-
-  const handleButton = value => {
-    // @todo check if number or operation
-    const expectedType = expectedValueType()
-
-    assertOperation(expectedType, value)
-    assertNumber(expectedType, value)
-
-    calcState.push(value)
-    setCalc(calcState)
-    setDisplay(calcState.join(''))
-  }
-
-  const calculate = () => {
-    const calculated = calcState.reduce(
-      (accumulator, currentValue) => { 
-        return Number(accumulator) + Number(currentValue) 
-      },
-      Number(0),
-    )
-    setResult(calculated)
-  }
-
-  const expectedValueType = () => {
-    return typeof calcState[calcState.length-1] === "number" ? "operation" : "number"
-  }
-
-  const assertOperation = (expectedType, value) => {
-    if (expectedType === 'operation' && !['+', '-', '*', '/'].includes(value)) {
-      new Error('Wrong type | expected operation')
-    }
-  }
-
-  const assertNumber = (expectedType, value) => {
-    if (expectedType === 'number' && typeof value !== "number") {
-      new Error('Wrong type | expected number')
-    }
-  }
-
+  const btnValues = [
+    ["AC", "+/-", "%", "÷"],
+    [7, 8, 9, "x"],
+    [4, 5, 6, "-"],
+    [1, 2, 3, "+"],
+    [0, ".", "="],
+  ]
+  
   return (
     <div className="App">
-      <article className="App-article">
+      <Container>
+        <Screen />
+          <BtnBox>
+            {btnValues.flat().map((btn, i) => (
+              <Button
+                value={btn}
+                key={i}
+              />
+            ))}
+          </BtnBox>
+      </Container>
+      {/* <article className="App-article">
         <div className="App-calculator">
-        <div className="output">{ display }</div>
+        <div className="output">0</div>
           <div className="keys">
             <button className="calculatorKey">AC</button>
             <button className="calculatorKey">+/-</button>
             <button className="calculatorKey">%</button>
-            <button className="keyOperatorAdd calculatorKey" onClick={() => handleButton('+')}>+</button>
-            <button className="keyOperatorSub calculatorKey" onClick={() => handleButton('-')}>-</button>
-            <button className="keyOperatorMul calculatorKey" onClick={() => handleButton('*')}>&times;</button>
-            <button className="keyOperatorDiv calculatorKey" onClick={() => handleButton('/')}>÷</button>
+            <button className="keyOperatorAdd calculatorKey">+</button>
+            <button className="keyOperatorSub calculatorKey">-</button>
+            <button className="keyOperatorMul calculatorKey">&times;</button>
+            <button className="keyOperatorDiv calculatorKey">÷</button>
             <button className="calculatorKey" onClick={() => handleButton(7)}>7</button>
             <button className="calculatorKey" onClick={() => handleButton(8)}>8</button>
             <button className="calculatorKey" onClick={() => handleButton(9)}>9</button>
@@ -74,7 +53,7 @@ function App() {
             <button className="calculatorKey enter" onClick={() => calculate()}>=</button>
           </div>
         </div>
-      </article>
+      </article> */}
     </div>
   );
 }
