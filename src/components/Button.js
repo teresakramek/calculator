@@ -13,9 +13,9 @@ const getStyleName = btn => {
 }
 
 const Button = ({ value }) => {
-    const { calc, setCalc } = useContext(CalcEngine);
+    const { calc, setCalc } = useContext(CalcEngine)
 
-    //User click dot
+    //User click comma
 
     const commaClick = () => {
         setCalc({
@@ -24,12 +24,23 @@ const Button = ({ value }) => {
         })
     }
 
+    //Use click AC button
+
+    const allClear = () => {
+        setCalc({
+            sign: '',
+            num: 0,
+            res: 0
+        })
+    }
+
 
     const handleBtnClick = () => {
         const results = {
-            ".": commaClick()
+            ".": commaClick,
+            "AC": allClear
         }
-        return results[value]
+        return results[value]()
     }
     return (
         <button onClick={handleBtnClick} className={`${getStyleName(value)} button`}>{value}</button>
