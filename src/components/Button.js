@@ -24,7 +24,7 @@ const Button = ({ value }) => {
         })
     }
 
-    //Use click AC button
+    //User click AC button
 
     const allClear = () => {
         setCalc({
@@ -34,13 +34,38 @@ const Button = ({ value }) => {
         })
     }
 
+    //User click number btn
+
+    const handleClickButton = () => {
+        
+        const numberString = value.toString()
+
+        let numberValue
+        console.log(numberString === '0' && calc.num === 0)
+        if(numberString === '0' && calc.num === 0) {
+            numberValue = "0"
+        } else {
+            console.log(numberValue = Number(calc.num + numberString))
+            numberValue = Number(calc.num + numberString)
+        }
+
+        setCalc({
+            ...calc,
+            num: numberValue
+        })
+    }
+
 
     const handleBtnClick = () => {
         const results = {
             ".": commaClick,
             "AC": allClear
         }
-        return results[value]()
+        if(results[value]){
+           return results[value]() 
+        } else {
+            return handleClickButton()
+        }
     }
     return (
         <button onClick={handleBtnClick} className={`${getStyleName(value)} button`}>{value}</button>
