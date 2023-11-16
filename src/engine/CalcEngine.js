@@ -5,7 +5,7 @@ export const CalcEngine = createContext()
 const CalcProvider = ({ children }) => {
     const [calc, setCalc] = useState({
         sign: "",
-        number: 0,
+        num: 0,
         res: 0
     });
     const providerValue = {
