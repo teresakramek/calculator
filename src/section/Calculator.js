@@ -17,7 +17,7 @@ function Calculator() {
     return (
         <Fragment>
             <div>
-                <div className="desc full-height" id="slide2">
+                <div className="calculator full-height" id="slide2">
                     <CalcProvider>
                         <Container>
                             <Screen />
