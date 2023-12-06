@@ -4,6 +4,7 @@ import Screen from './components/Screen';
 import BtnBox from './components/BtnBox';
 import Button from './components/Button';
 import CalcProvider from './engine/CalcEngine';
+import Index from './pages/Index';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   
   return (
     <div className="App">
+      <Index />
       <CalcProvider>
         <Container>
           <Screen />
