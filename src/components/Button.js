@@ -78,7 +78,7 @@ const Button = ({ value }) => {
                 return result[sign](a, b)
             }
             setCalc({
-                res: math(calc.res, calc.num, calc.sign),
+                res: Number(Number(math(calc.res, calc.num, calc.sign)).toFixed(2)),
                 sign: '',
                 num: 0
             })
@@ -97,11 +97,14 @@ const Button = ({ value }) => {
     //User click +/-
 
     const invertClick = () => {
+        console.log(calc)
         setCalc({
+            ...calc,
             num: calc.num ? calc.num * -1 : 0,
-            res: calc.res ? calc.res * -1 : 0,
-            sign: ''
+            res: calc.res
+            
         })
+        console.log(calc.num ? calc.num * -1 : 0)
     }
 
     const handleBtnClick = () => {

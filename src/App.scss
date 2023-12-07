@@ -130,20 +130,22 @@ body {
     .calculator {
         background: #fff;
         display: flex;
+        margin: 10px 0;
 
         .container {
             border-radius: 10px;
             box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15), 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
-            color: hsl(202, 11%, 29%);
+            color: #fff;
             margin-inline-start: auto;
             margin-inline-end: auto;
             margin-block-start: 2em;
             max-inline-size: 22rem;
             overflow: hidden;
             width: calc(50vw - 0.50rem);
+            height: auto;
         
             .screen {
-                background: hsl(207, 19%, 61%);
+                background: hsl(196, 87%, 59%);
                 font-size: 4.2rem;
                 padding-block-start: 3rem;
                 padding-block-end: 0.5rem;
@@ -151,7 +153,7 @@ body {
                 text-align: end;
             }
             .btnBox {
-                background: hsl(207, 19%, 61%);
+                background: hsl(196, 87%, 59%);
                 display: grid;
                 grid-gap: .5rem;
                 grid-template-columns: repeat(4, 1fr);
