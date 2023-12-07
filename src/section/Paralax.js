@@ -11,7 +11,7 @@ function Paralax() {
                             Wykorzystanie tego oprogramowania pozwala man łatwy sposób kontrolować pracę nad projektem.
                             Dodatkowo GIT cechują elastyczność, bezpieczeństwo, wydajność i funkcjonalność
                             Platforma na której przetrzymywane jest repozytorum to github. </p>
-                        <a href="https://github.com/teresakramek?tab=repositories" target="_blank"><i className="fa-brands fa-square-github"></i>Link</a>
+                        <a href="https://github.com/teresakramek/calculator/tree/master" target="_blank"><i className="fa-brands fa-square-github"></i>Link</a>
                     </div>
                 </div>
             </div>
