@@ -75,10 +75,13 @@ const Button = ({ value }) => {
                     'x': (a, b) => a * b,
                     '÷': (a, b) => a / b
                 }
+                if(b == 0 && sign === '÷') {
+                    return 'Nie dziel przez zero'
+                }
                 return result[sign](a, b)
             }
             setCalc({
-                res: Number(Number(math(calc.res, calc.num, calc.sign)).toFixed(2)),
+                res: typeof math(calc.res, calc.num, calc.sign) != 'string' ? Number(Number(math(calc.res, calc.num, calc.sign)).toFixed(2)) : math(calc.res, calc.num, calc.sign),
                 sign: '',
                 num: 0
             })
