@@ -76,7 +76,7 @@ const Button = ({ value }) => {
                     '÷': (a, b) => a / b
                 }
                 if(b == 0 && sign === '÷') {
-                    return 'Nie dziel przez zero'
+                    return 'Nie dziel'
                 }
                 return result[sign](a, b)
             }
