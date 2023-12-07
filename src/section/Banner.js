@@ -7,7 +7,9 @@ function Banner() {
             <div className="banner full-height" id="slide1">
                     <div className="kratka">
                         <h1>Historia kalkulatora</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore facere exercitationem nulla asperiores voluptatem, culpa at enim doloribus maiores debitis molestias dicta distinctio, aspernatur perspiciatis libero commodi repellat velit dolor.</p>
+                        <p>Pierwszy kalkulator kieszonkowy został wprowadzony na rynek w 1971 roku a jakiego nazwa brzmiała Bowmar 901B lub Bowmar Brain. 
+                            Został on uważany za rewolucyjny, ponieważ umożliwiał szybsze i łatwe wykonywanie obliczeń w porównaniu z wcześniejszymi kalkulatorami mechanicznymi czy elektornicznymi.
+                            Bowmar 901B rozpoczął erę przenośnych kalkulatorów, które używamy po dziś dzień. </p>
                     </div>
                 </div>
             </div>
